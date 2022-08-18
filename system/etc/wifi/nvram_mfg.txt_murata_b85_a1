@@ -1,5 +1,5 @@
-#bcm94358pciemdl1DEMS_MP_ES29_2antBT_mdfy_PAparam_murata_09182014.txt -- 9/18/2014 by Murata, based on bcm94358pciemdl1DEMS_MP_ES29_2antBT_mdfy_PAparam_09022014.txt
-#added tssisleep_en 
+#bcm94358pciemdl1DEMS_MP_ES29_2antBT_mdfy_PAparam_murata_09022014.txt -- 9/2/2014 by Murata, based on bcm94358pciemdl1DEMS_MP_ES29_2antBT_mdfy_PAparam_08282014.txt, Changed PAparam.
+#updated boardflags, BTcoex parameters, SWCTRL MAP.
 #BCM4358 WLCSP module for iPA, eLNA board with PCIE for production package and BT AoA
 NVRAMRev=$Rev: 373428 $
 sromrev=11
@@ -137,10 +137,8 @@ ofdmfilttype=1
 cckdigfilttype=4
 ## cck_onecore_tx - added on 9/2
 cck_onecore_tx=1
-## tssisleep_en - added on 9/18
-tssisleep_en=0x1f
 ## Enabling OOB signal - needed for final board 8/7
-#host_wake_opt=0
+host_wake_opt=0
 ## muxenab to enable OOB signal For Sensor Hub UART - needed for final board 8/7
 #muxenab=0x4
 # ###########  BTC Dynctl profile params 2-antenna scenario - updated on 8/6  ############

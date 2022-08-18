@@ -1,4 +1,4 @@
-#bcm94358pciemdl1FFMS_MM_mdfy_PAparam_20150128_rpcal.txt -- 1/28/2015 by Murata, based on bcm94358pciemdl1FFMS_MM_20150121-2.txt, Changed rpcal.
+#bcm94358pciemdl1FFMS_MM_mdfy_PAparam_141223_2rangeCal_ver4_rpcal_150209.txt -- 2/9/2015 by Murata, based on bcm94358pciemdl1FFMS_MM_20150121-2.txt, Changed rpcal.
 #BCM4358 WLCSP module for iPA, eLNA board with PCIE for production package and BT
 sromrev=11
 boardrev=0x1301
@@ -73,17 +73,17 @@ rawtempsense=0x1ff
 ## PA parameters for normal range
 pa2ga0=-104,6085,-655
 pa2ga1=-138,6158,-699
-pa5ga0=-174,5966,-714,-167,5981,-712,-173,5752,-694,-162,5721,-679
-pa5ga1=-166,6242,-735,-167,6239,-735,-151,6156,-710,-157,6005,-699
+pa5ga0=-174,5966,-714,-167,5853,-702,-173,5752,-694,-162,5721,-679
+pa5ga1=-166,6242,-735,-167,6239,-735,-151,6053,-702,-157,5749,-679
 ## PA parameters for lower power range
-pa2ga2=-140,4467,-606
-pa2ga3=-154,4497,-607
-pa5ga2=-153,4463,-602,-158,4416,-594,-154,4464,-597,-155,4362,-587
-pa5ga3=-165,4512,-607,-162,4535,-609,-159,4522,-606,-169,4363,-588
+pa2ga2=109,5005,-536
+pa2ga3=122,5131,-537
+pa5ga2=-111,3933,-557,-114,3966,-558,259,4994,-436,-95,3876,-551
+pa5ga3=16,4882,-608,-25,4647,-603,62,4732,-557,-29,4156,-567
 maxp2ga0=74
-maxp5ga0=74,74,74,76
-maxp2ga1=70
-maxp5ga1=70,70,70,70
+maxp5ga0=74,74,74,74
+maxp2ga1=74
+maxp5ga1=74,74,74,74
 subband5gver=0x4
 pdoffsetcckma0=0x2
 pdoffsetcckma1=0x2
@@ -177,7 +177,7 @@ host_wake_opt=0
 
 ## 2G TX power compensation, need to be tuned
 powoffs2gtna0=0,0,0,0,1,1,1,1,0,0,0,0,0,0
-#powoffs2gtna1=0,0,0,0,2,3,4,4,4,2,1,1,1,0
+powoffs2gtna1=0,-1,-1,-1,0,1,2,1,0,0,0,0,0,0
 ## reciprocity cal for implicit TXBF, need to be tuned
 rpcal2g=0x00BE
 rpcal5gb0=0x001F
@@ -185,8 +185,8 @@ rpcal5gb1=0x0010
 rpcal5gb2=0x0012
 rpcal5gb3=0x0032
 ## Dynamic SAR control, need to be tuned
-#dynamicsarctrl_2g=0xffb0
-#dynamicsarctrl_5g=0xffa0
+dynamicsarctrl_2g=0xffb0
+dynamicsarctrl_5g=0xffa0
 cck_onecore_tx=1
 # For Sensor Hub UART
 muxenab=0x4

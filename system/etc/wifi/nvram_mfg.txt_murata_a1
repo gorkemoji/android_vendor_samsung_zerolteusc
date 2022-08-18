@@ -1,11 +1,13 @@
-#bcm94358pciemdl1FFMS_MM_coex_ES2p0_mdfy_PAparam_12022014.txt -- 12/2/2014 by Murata, based on bcm94358pciemdl1FFMS_MM_coex_20141120.txt, Changed PAparam.
-#BCM4358 WLCSP module for iPA, eLNA board with PCIE for production package and BT
-NVRAMRev=$Rev: 503169 $
+#bcm94358pciemdl1DEMS_MP_ES29_2antBT_mdfy_PAparam_murata_09022014.txt -- 9/2/2014 by Murata, based on bcm94358pciemdl1DEMS_MP_ES29_2antBT_mdfy_PAparam_08282014.txt, Changed PAparam.
+#updated boardflags, BTcoex parameters, SWCTRL MAP.
+#BCM4358 WLCSP module for iPA, eLNA board with PCIE for production package and BT AoA
+NVRAMRev=$Rev: 373428 $
 sromrev=11
-boardrev=0x1100
+boardrev=0x1208
 ## boardtype is subject to change
-boardtype=0x0774
-boardflags=0x12001201
+boardtype=0x0746
+## boardflags modified - 8/28
+boardflags=0x12001001
 #enable eLNA both 2G/5G
 boardflags2=0x00002000
 boardflags3=0x48000109
@@ -66,26 +68,26 @@ tempthresh=120
 temps_hysteresis=15
 tempoffset=255
 rawtempsense=0x1ff
-pa2ga0=-45,6210,-614
-pa2ga1=-52,6392,-620
-pa5ga0=-172,6002,-713,-170,6133,-726,-159,6075,-716,-168,5880,-702
-pa5ga1=-174,6005,-717,-172,6055,-724,-162,5956,-708,-164,5868,-701
+pa2ga0=-149,6002,-691
+pa2ga1=-142,5809,-670
+pa5ga0=-169,6101,-727,-165,5995,-712,-168,5929,-708,-156,5975,-702
+pa5ga1=-161,6229,-729,-164,5909,-703,-157,6231,-729,-150,6352,-740
 maxp2ga0=74
 maxp5ga0=74,74,74,74
 maxp2ga1=74
 maxp5ga1=74,74,74,74
 subband5gver=0x4
-pdoffsetcckma0=0x2
-pdoffsetcckma1=0x2
+#pdoffsetcckma0=0x2
+#pdoffsetcckma1=0x2
 #pdoffset40ma0=0x2222
 #pdoffset80ma0=0x1111
 #pdoffset40ma1=0x3322
 #pdoffset80ma1=0x1121
-cckbw202gpo=0x0000
-cckbw20ul2gpo=0x0000
-mcsbw202gpo=0xa9755422
-mcsbw402gpo=0xa9755422
-dot11agofdmhrbw202gpo=0x5542
+cckbw202gpo=0x0222
+cckbw20ul2gpo=0x1222
+mcsbw202gpo=0xa9765422
+mcsbw402gpo=0xa9765422
+dot11agofdmhrbw202gpo=0x6542
 ofdmlrbw202gpo=0x0022
 mcsbw205glpo=0xa7766663
 mcsbw405glpo=0xa9966663
@@ -94,7 +96,7 @@ mcsbw205gmpo=0xa7766663
 mcsbw405gmpo=0xa9966663
 mcsbw805gmpo=0xbb866665
 mcsbw205ghpo=0xa7766663
-mcsbw405ghpo=0x98866663
+mcsbw405ghpo=0xa9966663
 mcsbw805ghpo=0xbb866665
 mcslr5glpo=0x0000
 mcslr5gmpo=0x0000
@@ -120,34 +122,28 @@ temps_period=15
 phy4350_ss_opt=1
 AvVmid_c0=2,140,2,145,2,145,2,145,2,145
 AvVmid_c1=2,140,2,145,2,145,2,145,2,145
-AvVmid_c2=0,0,0,0,0,0,0,0,0,0
 rssicorrnorm_c0=4,4
 rssicorrnorm_c1=4,4
-rssicorrnorm5g_c0=1,2,3,1,2,3,6,6,8,6,6,8
-rssicorrnorm5g_c1=1,2,3,2,2,2,7,7,8,7,7,8
+rssicorrnorm5g_c0=1,2,3,1,2,3,-1,0,3,-1,0,3
+rssicorrnorm5g_c1=1,2,3,2,2,2,0,1,2,0,1,2
+papdwar=4
 epsdelta2g0=0
 epsdelta2g1=0
-papdwar=4
+## SWCTRLMAP using AN29223K and AN29222K - updated on 8/28
+swctrlmap_5g=0x020c020c,0x05a40000,0x04240000,0x000000,0x0f8
+swctrlmap_2g=0x14211421,0x28510000,0x08110000,0x020202,0x0ff
+ofdmfilttype=1
+## cckdigfilttype
 cckdigfilttype=4
-tssisleep_en=0x1f
-
-## SWCTRLMAP using AN29223K and AN29222K
-# BT only uses RF_SW_CTRL_1
-swctrlmap_5g=0x02080208,0x05a00000,0x04200000,0x000000,0x0fd
-swctrlmap_2g=0x14011401,0x28500000,0x08100000,0x020202,0x0ff
-fem_table_init_val=0x1,0x1
-
-## muxenab to enable OOB signal - needed for final board
-#muxenab=0x11
-
+## cck_onecore_tx - added on 9/2
+cck_onecore_tx=1
+## Enabling OOB signal - needed for final board 8/7
+host_wake_opt=0
+## muxenab to enable OOB signal For Sensor Hub UART - needed for final board 8/7
+#muxenab=0x4
+# ###########  BTC Dynctl profile params 2-antenna scenario - updated on 8/6  ############
 btc_params82=0x0
-btc_params51=0x409f
-btc_params73=0
-prot_btrssi_thresh=0
-
-# ###########  BTC Dynctl profile params  ############
-# flags:bit0 - dynctl enabled, bit1 dynamic desense, bit2 dynamic mode
-
+# flags:bit0 - dynctl enabled, bit1 dynamic desense, bit2 dynamic mode - updated on 8/28
 btcdyn_flags=0x7
 btcdyn_dflt_dsns_level=0
 btcdyn_low_dsns_level=0
@@ -157,7 +153,19 @@ btcdyn_default_btc_mode=1
 # --- number of rows in the array vars below ---
 btcdyn_msw_rows=1
 btcdyn_dsns_rows=1
-# --- mode switch data rows (max is 4) ---
-btcdyn_msw_row0=1,12,-70,-5,-100
-# --- desense switching data rows (max is 4) ---
+# --- mode switch data rows (max is 4) --- modified - 8/6
+btcdyn_msw_row0=1,12,-70,-30,-90
+# --- desense switching data rows (max is 4) --- modified - 8/6
 btcdyn_dsns_row0=5,4,0,-65,-65
+## 2G TX power compensation, need to be tuned - 7/16
+#powoffs2gtna0=0,-1,-1,0,2,3,4,4,2,0,-1,-2,-1,0
+#powoffs2gtna1=0,0,0,0,2,3,4,4,4,2,1,1,1,0
+## reciprocity cal for implicit TXBF, need to be tuned - 7/16
+rpcal2g=0x0008
+rpcal5gb0=0x001F
+rpcal5gb1=0x0010
+rpcal5gb2=0x0016
+rpcal5gb3=0x000B
+## Dynamic SAR control, need to be tuned - 7/16
+#dynamicsarctrl_2g=0xffb0
+#dynamicsarctrl_5g=0xffa0

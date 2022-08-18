@@ -14,12 +14,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter zerofltechn,$(TARGET_DEVICE)),)
+ifneq ($(filter zerolteusc,$(TARGET_DEVICE)),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := atfwd
 LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/priv-app/atfwd/atfwd.apk
+LOCAL_SRC_FILES := system/app/atfwd/atfwd.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS

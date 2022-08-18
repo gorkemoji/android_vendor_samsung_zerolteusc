@@ -1,4 +1,4 @@
-#bcm94358pciemdl1FFMS_MM_mdfy_PAparam_141223_2rangeCal_2G_5G_3dBup_rpcal_150310.txt -- 3/10/2015 by Murata, based on bcm94358pciemdl1FFMS_MM_20150121-2.txt, Changed rpcal.
+#bcm94358pciemdl1FFMS_MM_mdfy_PAparam_141223_2rangeCal_5G_2dBup_rpcal_150212.txt -- 2/12/2015 by Murata, based on bcm94358pciemdl1FFMS_MM_20150121-2.txt, Changed rpcal.
 #BCM4358 WLCSP module for iPA, eLNA board with PCIE for production package and BT
 sromrev=11
 boardrev=0x1301
@@ -10,8 +10,8 @@ boardflags2=0x00002000
 boardflags3=0x48000109
 #boardnum=57410
 macaddr=00:90:4c:16:70:01
-ccode=CN
-regrev=38
+ccode=US
+regrev=0
 antswitch=0
 pdgain5g=4
 pdgain2g=4
@@ -71,19 +71,20 @@ temps_hysteresis=15
 tempoffset=255
 rawtempsense=0x1ff
 ## PA parameters for normal range
-pa2ga0=-104,5317,-616
-pa2ga1=-138,5390,-647
-pa5ga0=-174,5198,-649,-167,5085,-639,-173,4984,-629,-162,4953,-618
-pa5ga1=-166,5474,-673,-167,5471,-672,-151,5285,-645,-157,4981,-620
+pa2ga0=-104,6085,-655
+pa2ga1=-138,6158,-699
+pa5ga0=-174,5454,-670,-167,5341,-660,-173,5240,-651,-162,5209,-638
+pa5ga1=-166,5730,-694,-167,5727,-693,-151,5541,-664,-157,5237,-640
 ## PA parameters for lower power range
-pa2ga2=109,4237,-495
-pa2ga3=122,4363,-496
-pa5ga2=-111,3165,-515,-114,3198,-515,259,4226,-393,-95,3108,-515
-pa5ga3=16,4114,-572,-25,3879,-572,62,3964,-548,-29,3388,-556
-maxp2ga0=76
-maxp5ga0=76,76,76,74
-maxp2ga1=76
-maxp5ga1=76,76,76,74
+pa2ga2=109,5005,-536
+pa2ga3=122,5131,-537
+pa5ga2=-111,3421,-529,-114,3454,-530,259,4482,-408,-95,3364,-527
+pa5ga3=16,4370,-584,-25,4135,-597,62,4220,-551,-29,3644,-560
+
+maxp2ga0=78	
+maxp5ga0=76,76,70,70
+maxp2ga1=78
+maxp5ga1=76,76,70,70
 subband5gver=0x4
 pdoffsetcckma0=0x2
 pdoffsetcckma1=0x2
@@ -133,8 +134,8 @@ phy4350_ss_opt=1
 AvVmid_c0=2,140,2,145,2,145,2,145,2,145
 AvVmid_c1=2,140,2,145,2,145,2,145,2,145
 AvVmid_c2=0,0,0,0,0,0,0,0,0,0
-rssicorrnorm_c0=0,0
-rssicorrnorm_c1=0,0
+rssicorrnorm_c0=5,5
+rssicorrnorm_c1=5,5
 rssicorrnorm5g_c0=-1,0,1,-1,0,1,-1,0,1,-1,0,1
 rssicorrnorm5g_c1=0,2,2,0,2,2,-1,0,1,-1,0,1
 epsdelta2g0=0
@@ -185,8 +186,9 @@ rpcal5gb1=0x0010
 rpcal5gb2=0x0012
 rpcal5gb3=0x0032
 ## Dynamic SAR control, need to be tuned
-#dynamicsarctrl_2g=0xffb0
-#dynamicsarctrl_5g=0xffa0
+dynamicsarctrl_2g=0xb0b0
+dynamicsarctrl_5g=0xa0a0
+
 cck_onecore_tx=1
 # For Sensor Hub UART
 muxenab=0x4

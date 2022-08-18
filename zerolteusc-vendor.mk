@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := vendor/samsung/zerofltechn
+LOCAL_PATH := vendor/samsung/zerolteusc
 
 # Common
 PRODUCT_COPY_FILES += \
@@ -237,10 +237,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/lib/lib_SamsungRec_V04013_WNR004.so:system/lib/lib_SamsungRec_V04013_WNR004.so \
     $(LOCAL_PATH)/system/lib/lib_SoundAlive_3DPosition_ver202.so:system/lib/lib_SoundAlive_3DPosition_ver202.so \
     $(LOCAL_PATH)/system/lib/lib_soundaliveresampler.so:system/lib/lib_soundaliveresampler.so
-
-# NFC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/system/vendor/firmware/libpn548ad_fw.so:system/vendor/firmware/libpn548ad_fw.so
 
 # Sensors
 PRODUCT_COPY_FILES += \

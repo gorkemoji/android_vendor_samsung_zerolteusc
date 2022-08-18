@@ -1,13 +1,12 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml  version="1.0" encoding="UTF-8" ?>
 <SW-Configuration>
-  <MobileData>
-    <PublicName>SM-G9200/M32</PublicName>
-    <NickName />
-  </MobileData>
-  <CustomerDataSet>
-    <CSCName />
-    <CSCVersion />
-    <NbCustomer>1</NbCustomer>
-    <CustomerData src="/Customer/CHC/customer.xml" />
-  </CustomerDataSet>
+	<MobileData>
+	<PublicName>SM-G925R4</PublicName>
+	</MobileData>
+	<CustomerDataSet>
+	<CSCName>G925R4USC</CSCName>
+	<CSCVersion>4DRI1</CSCVersion>
+	<NbCustomer>1</NbCustomer>
+	<CustomerData src="/Customer/USC/customer.xml" />
+	</CustomerDataSet>
 </SW-Configuration>
